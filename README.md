@@ -64,11 +64,9 @@ General Use
 | 8 (2/24)      | Stretch Goals + Information Maintanence | Feature Testing |
 | 9 Hackathon Week!       | Maintain Website during hack hours! Eat good food 👍🏾 | --- |
 
-<div align="center">
+
 # HackPortal
 ### _A platform for user-friendly hackathon event management._  
-</div>
-
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [Join the HackPortal HQ Discord!](https://discord.gg/GueKFPdN64)
