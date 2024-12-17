@@ -1,8 +1,8 @@
-
-testing commit 
+<div align="center">
 
 # NTHSHack
 North Texas High School Hack! March 8 & 9 @ UTD ECSS/ECSW Saturday 9AM-9PM Sunday 9AM-6PM Food and swag provided!
+</div>
 
 ## MVP 💪🏾
 - HackPortal Setup/Proper functionality
