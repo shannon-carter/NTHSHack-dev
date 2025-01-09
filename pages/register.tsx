@@ -60,10 +60,10 @@ export default function Register({ allowedRegistrations }: RegisterPageProps) {
     formInitialValues['permissions'] = user?.permissions || ['hacker'];
   }, []);
 
-  // disbale this for testing
-  useEffect(() => {
-    checkRedirect();
-  }, [user]);
+  // disable this for testing
+  // useEffect(() => {
+  //   checkRedirect();
+  // }, [user]);
 
   const handleSubmit = async (registrationData) => {
     let resumeUrl: string = '';
@@ -129,9 +129,9 @@ export default function Register({ allowedRegistrations }: RegisterPageProps) {
   }
 
   // disable this for testing
-  if (!user) {
-    router.push('/');
-  }
+  // if (!user) {
+  //   router.push('/');
+  // }
 
   if (loading) {
     return <LoadIcon width={200} height={200} />;

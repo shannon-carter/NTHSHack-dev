@@ -50,6 +50,7 @@ export class RequestHelper {
       method: 'GET',
       mode: 'cors',
     });
+    console.log(temp.statusText);
     const data = await temp.json();
     return {
       status: temp.status,

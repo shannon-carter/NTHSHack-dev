@@ -22,13 +22,13 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
 
   /* Dates Values */
   const dateValues = {
-    year: props.dateCard[0].year,
-    day1: props.dateCard[0].day1,
-    day1Month: props.dateCard[0].day1Month,
-    day2: props.dateCard[0].day2,
-    day2Month: props.dateCard[0].day2Month,
-    endTime: props.dateCard[0].endTime,
-    startTime: props.dateCard[0].startTime,
+    year: props.dateCard[0]?.year,
+    day1: props.dateCard[0]?.day1,
+    day1Month: props.dateCard[0]?.day1Month,
+    day2: props.dateCard[0]?.day2,
+    day2Month: props.dateCard[0]?.day2Month,
+    endTime: props.dateCard[0]?.endTime,
+    startTime: props.dateCard[0]?.startTime,
   };
 
   /* Set event dates and times */
