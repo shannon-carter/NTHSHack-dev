@@ -7,17 +7,17 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
   /* Event Colors */
   const eventColors = {
     All: 'border-gray-500 text-gray-500',
-    Required: 'border-[#FC012E] text-[#FC012E]',
-    Food: 'border-[#56E100] text-[#56E100]',
-    Social: 'border-[#FFB900] text-[#FFB900]',
-    Sponsor: 'border-[#008CF1] text-[#008CF1]',
-    Workshop: 'border-[#5200FF] text-[#5200FF]',
+    ChallengeOpensCloses: 'border-[#FC012E] text-[#FC012E]',
+    General: 'border-[#56E100] text-[#56E100]',
+    Activities: 'border-[#FFB900] text-[#FFB900]',
+    Workshops: 'border-[#008CF1] text-[#008CF1]',
+    Food: 'border-[#5200FF] text-[#5200FF]',
     'All-Filter': 'border-gray-500 bg-gray-500 text-white',
-    'Required-Filter': 'border-[#FC012E] bg-[#FC012E] text-white',
-    'Food-Filter': 'border-[#56E100] bg-[#56E100] text-white',
-    'Social-Filter': 'border-[#FFB900] bg-[#FFB900] text-white',
-    'Sponsor-Filter': 'border-[#008CF1] bg-[#008CF1] text-white',
-    'Workshop-Filter': 'border-[#5200FF] bg-[#5200FF] text-white',
+    'ChallengeOpensCloses-Filter': 'border-[#FC012E] bg-[#FC012E] text-white',
+    'General-Filter': 'border-[#56E100] bg-[#56E100] text-white',
+    'Activities-Filter': 'border-[#FFB900] bg-[#FFB900] text-white',
+    'Workshops-Filter': 'border-[#008CF1] bg-[#008CF1] text-white',
+    'Food-Filter': 'border-[#5200FF] bg-[#5200FF] text-white',
   };
 
   /* Dates Values */
@@ -33,24 +33,24 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
 
   /* Set event dates and times */
   const day1StartDateAndTime = new Date(
-    dateValues['year'],
-    dateValues['day1Month'],
-    dateValues['day1'],
-    dateValues['startTime'],
+    dateValues['2025'],
+    dateValues['March'],
+    dateValues['Friday'],
+    dateValues['9:00AM'],
     0,
   );
   const day2StartDateAndTime = new Date(
-    dateValues['year'],
-    dateValues['day2Month'],
-    dateValues['day2'],
-    dateValues['startTime'],
+    dateValues['2025'],
+    dateValues['March'],
+    dateValues['Saturday'],
+    dateValues['9:00AM'],
     0,
   );
   const eventEndDateAndTime = new Date(
-    dateValues['year'],
-    dateValues['day1Month'],
-    dateValues['day2'] + 1,
-    dateValues['endTime'],
+    dateValues['2025'],
+    dateValues['March'],
+    dateValues['Saturday'] + 1,
+    dateValues['5:00PM'],
     0,
   );
 
@@ -159,43 +159,53 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
             </div>
 
             <div
-              onClick={() => changeFilter('Required')}
+              onClick={() => changeFilter('ChallengeOpensCloses')}
               className={`text-sm cursor-pointer mx-1 px-2 h-8 py-1 border-2 rounded-xl
-              ${filter === 'Required' ? eventColors['Required-Filter'] : eventColors['Required']}`}
+              ${
+                filter === 'ChallengeOpensCloses'
+                  ? eventColors['ChallengeOpensCloses-Filter']
+                  : eventColors['ChallengeOpensCloses']
+              }`}
             >
-              Required
+              Challenge Opens & Closes
             </div>
 
             <div
-              onClick={() => changeFilter('Sponsor')}
+              onClick={() => changeFilter('Workshops')}
               className={`text-sm cursor-pointer mx-1 px-2 h-8 py-1 border-2 rounded-xl
-              ${filter === 'Sponsor' ? eventColors['Sponsor-Filter'] : eventColors['Sponsor']}`}
+              ${
+                filter === 'Workshops' ? eventColors['Workshops-Filter'] : eventColors['Workshops']
+              }`}
             >
-              Sponsor
+              Workshops/Panels
+            </div>
+
+            <div
+              onClick={() => changeFilter('General')}
+              className={`text-sm cursor-pointer	mx-1 px-2 h-8 py-1 border-2 rounded-xl
+              ${filter === 'General' ? eventColors['General-Filter'] : eventColors['General']}`}
+            >
+              General
             </div>
 
             <div
               onClick={() => changeFilter('Food')}
-              className={`text-sm cursor-pointer	mx-1 px-2 h-8 py-1 border-2 rounded-xl
+              className={`text-sm cursor-pointer mx-1 px-2 h-8 py-1 border-2 rounded-xl
               ${filter === 'Food' ? eventColors['Food-Filter'] : eventColors['Food']}`}
             >
               Food
             </div>
 
             <div
-              onClick={() => changeFilter('Workshop')}
+              onClick={() => changeFilter('Activities')}
               className={`text-sm cursor-pointer mx-1 px-2 h-8 py-1 border-2 rounded-xl
-              ${filter === 'Workshop' ? eventColors['Workshop-Filter'] : eventColors['Workshop']}`}
+              ${
+                filter === 'Activities'
+                  ? eventColors['Activities-Filter']
+                  : eventColors['Activities']
+              }`}
             >
-              Workshop
-            </div>
-
-            <div
-              onClick={() => changeFilter('Social')}
-              className={`text-sm cursor-pointer mx-1 px-2 h-8 py-1 border-2 rounded-xl
-              ${filter === 'Social' ? eventColors['Social-Filter'] : eventColors['Social']}`}
-            >
-              Social
+              Activities
             </div>
           </div>
         </div>
@@ -204,16 +214,16 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
       {/* Calendar */}
       <div className="md:flex p-1 overflow-y-auto overflow-x-hidden mx-auto lg:w-[80%] w-full h-full">
         <div className="w-full lg:w-1/2 px-4 md:px-0">
-          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">
-            Day 1: Saturday
-          </div>
+          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">Day 1: Friday</div>
           <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-2xl border-[#05149C] border-opacity-20">
             {day1Events}
           </div>
         </div>
 
         <div className="w-full lg:w-1/2 md:ml-6 px-4 md:px-0">
-          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">Day 2: Sunday</div>
+          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">
+            Day 2: Saturday
+          </div>
           <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-2xl border-[#05149C] border-opacity-20">
             {day2Events}
           </div>
