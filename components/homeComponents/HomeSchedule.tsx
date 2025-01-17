@@ -35,21 +35,21 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
   const day1StartDateAndTime = new Date(
     dateValues['2025'],
     dateValues['March'],
-    dateValues['Friday'],
+    dateValues['Saturday'],
     dateValues['9:00AM'],
     0,
   );
   const day2StartDateAndTime = new Date(
     dateValues['2025'],
     dateValues['March'],
-    dateValues['Saturday'],
+    dateValues['Sunday'],
     dateValues['9:00AM'],
     0,
   );
   const eventEndDateAndTime = new Date(
     dateValues['2025'],
     dateValues['March'],
-    dateValues['Saturday'] + 1,
+    dateValues['Sunday'] + 1,
     dateValues['5:00PM'],
     0,
   );
@@ -214,16 +214,16 @@ export default function HomeSchedule(props: { scheduleCard: ScheduleEvent[]; dat
       {/* Calendar */}
       <div className="md:flex p-1 overflow-y-auto overflow-x-hidden mx-auto lg:w-[80%] w-full h-full">
         <div className="w-full lg:w-1/2 px-4 md:px-0">
-          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">Day 1: Friday</div>
+          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">
+            Day 1: Saturday
+          </div>
           <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-2xl border-[#05149C] border-opacity-20">
             {day1Events}
           </div>
         </div>
 
         <div className="w-full lg:w-1/2 md:ml-6 px-4 md:px-0">
-          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">
-            Day 2: Saturday
-          </div>
+          <div className="text-3xl font-black py-6 text-[#05149C] font-fredoka">Day 2: Sunday</div>
           <div className="bg-white mb-8 mx-2 p-2 border-2 rounded-2xl border-[#05149C] border-opacity-20">
             {day2Events}
           </div>
