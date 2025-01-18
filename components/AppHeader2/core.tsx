@@ -133,19 +133,30 @@ export default function AppHeader2_Core() {
           </Menu>
         )}
 
-        <div className="p-2 text-white cursor-pointer">
-          {!hasProfile && (
-            <Link href="/register">
-              <div className="py-3 px-5 rounded-[30px] bg-[#5D5A88] font-bold">Apply</div>
-            </Link>
-          )}
-          {hasProfile && (
-            <Link href="/profile">
-              <div className="py-3 px-5 rounded-[30px] bg-[#5D5A88] font-bold">Profile</div>
-            </Link>
-          )}
-        </div>
+        {user && (
+          <div className="p-2 text-white cursor-pointer">
+            {!hasProfile && (
+              <Link href="/register">
+                <div className="py-3 px-5 rounded-[30px] bg-[#5D5A88] font-bold">Apply</div>
+              </Link>
+            )}
+            {hasProfile && (
+              <Link href="/profile">
+                <div className="py-3 px-5 rounded-[30px] bg-[#5D5A88] font-bold">Profile</div>
+              </Link>
+            )}
+          </div>
+        )}
       </div>
+      {user ? (
+        <Link href="/auth/signOut" className="ml-2 bg-blue-400 p-5 text-white rounded-lg">
+          Sign Out
+        </Link>
+      ) : (
+        <Link href="/auth" className="ml-2 bg-blue-400 p-5 text-white rounded-lg">
+          Sign In
+        </Link>
+      )}
     </div>
   );
 }
